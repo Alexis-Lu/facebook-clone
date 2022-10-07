@@ -1,0 +1,51 @@
+.widgets {
+  padding: 20px 15px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.widgets__bar {
+  border-bottom: 0.3px solid #65676b;
+  width: 90%;
+  padding: 0px 10px;
+  margin: 15px 0px 10px 0px;
+}
+
+.widgets__sponsorise {
+  color: #65676b;
+  font-size: 17px;
+}
+
+.contacts {
+  color: #65676b;
+  font-size: 17px;
+}
+
+.widgets__contacts__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.widgets__contacts__container > div > .MuiSvgIcon-root {
+  color: gray;
+  padding: 5px;
+}
+
+.widgets__contacts__container > div > .MuiSvgIcon-root:hover {
+  border-radius: 999px;
+  cursor: pointer;
+  background-color: #eff2f5;
+}
+
+.h3 {
+  color: #65676b;
+}
+
+.widgets__cdg {
+  margin: 5px 5px 20px;
+  color: #65676b;
+  font-size: 17px;
+}

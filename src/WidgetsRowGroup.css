@@ -1,0 +1,33 @@
+.widgetsRowGroup {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 10px;
+}
+
+.widgetsRowGroup:hover {
+  cursor: pointer;
+  background-color: #eff2f5;
+  border-radius: 10px;
+}
+
+.widgetsRowGroup__avatar {
+  position: absolute;
+}
+
+.widgetsRowGroup__image1 {
+  position: relative;
+  left: 10px;
+}
+
+.widgetsRowGroup__image2 {
+  position: relative;
+  bottom: 10px;
+}
+
+.widgetsRowGroup > div > h3 {
+  position: relative;
+  left: 40px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #050505;
+}

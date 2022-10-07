@@ -1,0 +1,126 @@
+.login {
+  display: flex;
+  height: 100vh;
+}
+
+.login__left {
+  display: flex;
+  flex-direction: column;
+  left: 50%;
+  width: 100%;
+  justify-content: center;
+  align-items: left;
+  margin: 40px;
+}
+
+.login__left > img {
+  height: 70px;
+  width: 200px;
+  margin: -20px;
+  padding: 8px 0px 16px;
+}
+
+.login__left > h4 {
+  font-size: 28px;
+  color: #1c1e21;
+  font-weight: normal;
+  line-height: 28px;
+}
+
+.login__left > p {
+  color: #606770;
+  font-size: 15px;
+  line-height: 24px;
+  margin-bottom: 12px;
+  font-weight: normal;
+}
+
+.login__right {
+  display: flex;
+  flex-direction: column;
+  right: 50%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin: 40px;
+}
+
+.login__form {
+  width: 400px;
+}
+
+.login__input {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.login__cards {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.login__card {
+  border-radius: 8px 8px 0% 0%;
+  height: 160px;
+  width: 160px;
+  border: 0.3px solid;
+  margin-right: 20px;
+}
+
+.login__card__container {
+  display: flex;
+  flex-direction: column;
+}
+
+.login__card__name {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-right: 20px;
+  border: 0.3px solid;
+  border-top: 0;
+  padding: 12px 0px 12px 0px;
+  font-size: 18px;
+  color: #4b4f56;
+  border-radius: 0px 0px 8px 8px;
+}
+
+.login__card:hover {
+  cursor: pointer;
+}
+
+.login__card__name:hover {
+  cursor: pointer;
+}
+
+.login__form {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  padding: 10px 10px 24px 10px;
+  align-items: center;
+}
+
+.login__input {
+  width: auto;
+}
+
+.login__input > input {
+  padding: 14px 16px;
+  border-radius: 6px;
+  width: 330px;
+  border: 0.3px solid #ccd0d5;
+  margin: 10px 0px 10px 0px;
+  height: 23px;
+}
+
+.login__button__sc {
+  width: 364px;
+  font-size: 20px !important;
+  background-color: #1877f2 !important;
+  color: white !important;
+  border-radius: 6px !important;
+  margin: 10px 0px 10px 0px !important;
+}
