@@ -12,14 +12,13 @@ import React from "react";
 import "./Sidebar.css";
 import SideBarRow from "./SidebarRow";
 import { Avatar } from "@mui/material";
+import { useStateValue } from "./StateProvider";
 
 export default function Sidebar() {
+  const [{ user }, dispatch] = useStateValue();
   return (
     <div className="sidebar">
-      <SideBarRow
-        title="Alexis Lu"
-        src="https://img.freepik.com/vecteurs-premium/profil-avatar-homme-icone-ronde_24640-14044.jpg"
-      />
+      <SideBarRow title={user.displayName} src={user.photoURL} />
       <SideBarRow Icon={PeopleIcon} title="Amis" />
       <SideBarRow Icon={GroupsIcon} title="Groupes" />
       <SideBarRow Icon={StorefrontIcon} title="Marketplace" />

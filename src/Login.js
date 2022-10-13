@@ -1,13 +1,20 @@
 import { Button } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 import "./Login.css";
 import { auth, provider } from "./firebase";
 import { signInWithPopup } from "firebase/auth";
+import { actionTypes } from "./reducer";
+import { useStateValue } from "./StateProvider";
 
 export default function Login() {
+  const [state, dispatch] = useStateValue();
   const signIn = () => {
     signInWithPopup(auth, provider)
       .then((result) => {
+        dispatch({
+          type: actionTypes.SET_USER,
+          user: result.user,
+        });
         console.log(result);
       })
       .catch((error) => alert(error.message));
@@ -39,17 +46,27 @@ export default function Login() {
       <div className="login__right">
         <div className="login__form">
           <div className="login__input">
-            <input></input>
-            <input></input>
+            <input placeholder="Adresse e-mail ou numéro de tél."></input>
+            <input placeholder="Mot de passe"></input>
           </div>
           <Button type="submit" onClick={signIn} className="login__button__sc">
             Se connecter
           </Button>
           <p>Mot de passe oublié ?</p>
-          <div></div>
-          <Button className="login__button__cunc">
+          <div className="login__bar"></div>
+          <Button
+            type="submit"
+            className="login__button__cunc"
+            onClick={signIn}
+          >
             Créer un nouveau compte
           </Button>
+        </div>
+        <div className="login__help">
+          <p>
+            <span className="login__help__span">Créer une Page</span> pour une
+            célébrité, une marque ou une entreprise.
+          </p>
         </div>
       </div>
     </div>

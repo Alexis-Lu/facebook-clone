@@ -1,8 +1,10 @@
 import React from "react";
+import { useStateValue } from "./StateProvider";
 import Story from "./Story";
 import "./StoryReel.css";
 
 export default function StoryReel() {
+  const [{ user }, dispatch] = useStateValue();
   return (
     <div className="storyReel">
       <div className="storyReel__top">
@@ -13,8 +15,8 @@ export default function StoryReel() {
       <div className="storyReel__content">
         <Story
           image="https://images.unsplash.com/photo-1565992441121-4367c2967103?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8c2tpfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60"
-          profileSrc=""
-          title="Alexis Lu"
+          profileSrc={user.photoURL}
+          title={user.displayName}
         />
         <Story
           image="https://www.journaldugeek.com/content/uploads/2021/10/template-jdg-56.jpg"

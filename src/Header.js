@@ -10,8 +10,10 @@ import { Avatar, IconButton } from "@mui/material";
 import NotificationsActiveIcon from "@mui/icons-material/NotificationsActive";
 import MenuIcon from "@mui/icons-material/Menu";
 import MessageIcon from "@mui/icons-material/Message";
+import { useStateValue } from "./StateProvider";
 
 export default function Header() {
+  const [{ user }, dispatch] = useStateValue();
   return (
     <div className="header">
       <div className="header__left">
@@ -61,7 +63,7 @@ export default function Header() {
               border: "0.3px solid gray",
               cursor: "pointer",
             }}
-            src="https://img.freepik.com/vecteurs-premium/profil-avatar-homme-icone-ronde_24640-14044.jpg"
+            src={user.photoURL}
           />
         </div>
       </div>

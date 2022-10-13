@@ -1,23 +1,40 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./Feed.css";
 import StoryReel from "./StoryReel";
 import MessageSender from "./MessageSender";
 import Post from "./Post";
+import db from "./firebase";
 
 export default function Feed() {
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    db.collection("posts")
+      .orderBy("timestamp", "desc")
+      .onSnapshot((snapshot) =>
+        setPosts(snapshot.docs.map((doc) => ({ id: doc.id, data: doc.data() })))
+      );
+    console.log(posts);
+  }, []);
+
   return (
     <div className="feed">
       <StoryReel />
       <MessageSender />
-      <Post
-        profilePic="https://img.freepik.com/vecteurs-premium/profil-avatar-homme-icone-ronde_24640-14044.jpg"
-        timestamp="This is a timestamp"
-        message="THIS IS ME !"
-        username="Alexis Lu"
-        image="https://i.kym-cdn.com/photos/images/facebook/001/896/232/2a0.jpg"
-      />
-      <Post />
-      <Post />
+
+      {posts.map((post) => {
+        console.log(post);
+        return (
+          <Post
+            key={post.id}
+            profilePic={post.data.profilePic}
+            message={post.data.message}
+            timestamp={post.data.timestamp}
+            username={post.data.username}
+            image={post.data.image}
+          />
+        );
+      })}
     </div>
   );
 }
